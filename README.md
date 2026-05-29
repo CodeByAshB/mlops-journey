@@ -6,7 +6,7 @@
 | Day | Project | Status |
 |-----|---------|--------|
 | 01  | K8s AI Agent | ✅ Done |
-| 02  | FastAPI Model Serving | 🔄 Coming |
+| 02  | FastAPI Model Serving | ✅ Done |
 | 03  | Docker + CI/CD | 🔄 Coming |
 
 ## Tech Stack
