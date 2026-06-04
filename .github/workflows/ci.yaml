@@ -1,0 +1,33 @@
+name: K8s Agent CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies
+      run: |
+        cd k8s-agent
+        pip install -r requirements.txt
+
+    - name: Build Docker image
+      run: |
+        cd k8s-agent
+        docker build -t k8s-agent .
+
+    - name: Check Docker image exists
+      run: docker images k8s-agent
